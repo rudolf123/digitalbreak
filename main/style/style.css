@@ -1,0 +1,109 @@
+a {
+	text-decoration: none;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+header {
+	background-color: #2979ff;
+}
+.header_contain {
+	display: flex;
+	align-items: center;
+}
+.logo {
+	margin-left: 15px;
+	align-items: center;
+	display: flex;
+}
+.logo img {
+	width: 65px;
+  	height: 88px;
+}
+.logo p {
+  	font-size: 25px;
+  	font-weight: 900;
+    letter-spacing: 0.45px;
+    color: #ffffff;
+}
+.geo_location {
+	cursor: pointer;
+	position: relative;
+	margin-left: 81px;
+	margin-right: 132px;
+}
+.geo_location img {
+	position: absolute;
+	left: 160px;
+	bottom: 5px;
+}
+.geo_location a {
+	font-size: 16px;
+	color: #fff;
+}
+.geo_location a:hover {
+	text-decoration: none;
+}
+.main_navigation {
+	width: 50%;
+	margin-right: 6%;
+}
+.main_navigation ul {
+	display: flex;
+	justify-content: space-between;
+}
+.main_navigation ul li a {
+	color: #fff;
+	font-size: 20px;
+}
+.main_navigation ul li a:hover {
+	text-decoration: none;
+	border-bottom: 4px solid #ffea00;
+}
+.search {
+	cursor: pointer;
+}
+
+.wrapper {
+	margin:0 24.6% 0 24.6%;
+}
+h1 {
+	font-family: "Roboto", sans-serif;
+  	font-size: 60px;
+  	font-weight: bold;
+	justify-content: center;
+	text-align: center;
+	margin-top: 115px;
+	margin-bottom: 60px;
+}
+.wrapper p {
+	font-size: 16px;
+	margin-bottom: 75px;
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	vertical-align: middle;
+}
+.btn {
+	padding-top: 15px;
+	text-align: center;
+	vertical-align: middle;
+	box-sizing: border-box;
+	width: 210px;
+	height: 50px;
+	border-radius: 4px;
+}
+.appeal {
+	border: 1px solid #000;
+}
+.registration {
+	background-color: #00e676;
+}
+.buttons a {
+	color: #000;
+	font-size: 16px;
+}
+.buttons a:hover {
+	text-decoration: none;
+}
