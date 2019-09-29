@@ -33,7 +33,7 @@
           <div class="col-8 ">
             <nav class="header__nav">
               <li><a href="#">Партнёры</a></li>
-              <li><a href="#">Квесты</a></li>
+              <li><a href="questlist.php">Квесты</a></li>
               <li><a href="activist.php">Активисты</a></li>
               <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
@@ -85,7 +85,9 @@ $( document ).ready(function(){
               data: $form.serialize()
             }).done(function(data) {
                 console.log(data);
-                if (data == 500)
+                if (data=="Already register")
+                    alertify.error('Ошибка. Пользователь с таким номером уже зарегистрирован');
+                else  if (data == 500)
                     alertify.error('Ошибка. Проверьте правильность заполнения полей');
                 else{
                   alertify.alert("Поздравляем!","Вы успешно зарегистрированы!", function(){

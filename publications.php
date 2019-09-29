@@ -1,3 +1,12 @@
+<?php session_start(); 
+        require_once 'connection.php';
+         
+        $link = mysqli_connect($host, $user, $password, $database) 
+            or die("Ошибка " . mysqli_error($link)); 
+        $query ="SELECT `id`, `firstname`, `patronymic`, `secondname`, `phone`, `birthday`, `is_checked`, `is_volunteer`, `checknum`, `level`, `city`, `description`, `photo` FROM `user` WHERE `phone`=".$_SESSION['userphone'];
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+        $data=mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +36,7 @@
           <div class="col-8 ">
             <nav class="header__nav">
               <li><a href="#">Партнёры</a></li>
-              <li><a href="#">Квесты</a></li>
+              <li><a href="questlist.php">Квесты</a></li>
               <li><a href="activist.php">Активисты</a></li>
               <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
@@ -49,7 +58,7 @@
           <div class="col-4">
             <div class="user__left-information">
               <div class="user-photo">
-                <img src="img/user_avatar/adolescent-attractive-backpack-1462630@3x.png" alt="avatar">
+                <img src="<?php echo $data['photo']?>" alt="avatar">
               </div>
               <!-- /.user-photo -->
             </div>
@@ -57,7 +66,7 @@
           </div>
           <!-- /.col-4 -->
           <div class="col-8">
-            <h2 class="user-name">Варламова Екатерина Дмитриевна</h2>
+            <h2 class="user-name"><?php echo $data['secondname']." ".$data['firstname']." ".$data['patronymic'] ?></h2>
             <h3 class="user-status">Волонтёр</h3>
             <nav class="user__nav">
               <ul class="user__nav-menu">

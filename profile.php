@@ -1,3 +1,12 @@
+<?php session_start(); 
+        require_once 'connection.php';
+         
+        $link = mysqli_connect($host, $user, $password, $database) 
+            or die("Ошибка " . mysqli_error($link)); 
+        $query ="SELECT `id`, `firstname`, `patronymic`, `secondname`, `phone`, `birthday`, `is_checked`, `is_volunteer`, `checknum`, `level`, `city`, `description`, `photo` FROM `user` WHERE `phone`=".$_SESSION['userphone'];
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+        $data=mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +20,12 @@
     <link href="css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="js/css/alertify.min.css" rel="stylesheet">
+    <link href="js/css/themes/bootstrap.min.css" rel="stylesheet">
+    <link href="js/css/themes/default.min.css" rel="stylesheet">
+    <link href="js/css/themes/semantic.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-git2.js"></script>    
+    <script src="js/alertify.min.js"></script>
   </head>
 
   <body>
@@ -49,7 +64,7 @@
           <div class="col-4">
             <div class="user__left-information">
               <div class="user-photo">
-                <img src="img/user_avatar/adolescent-attractive-backpack-1462630@3x.png" alt="avatar">
+                <img src="<?php echo $data['photo']?>" alt="avatar">
               </div>
               <!-- /.user-photo -->
               <div class="user__social">
@@ -67,14 +82,14 @@
                 <img src="img/user_team/group-6.png" alt="#">
                 <img src="img/user_team/group-7.png" alt="#">
               </div>
-              <button class="btn-blue">Предложить проект</button>
+              <button class="btn-index">Предложить проект</button>
             <!-- /.user__left-information -->
             </div>
             <!-- /.user__left-information -->
           </div>
           <!-- /.col-4 -->
           <div class="col-8">
-            <h2 class="user-name">Варламова Екатерина Дмитриевна</h2>
+            <h2 class="user-name"><?php echo $data['secondname']." ".$data['firstname']." ".$data['patronymic'] ?></h2>
             <h3 class="user-status">Волонтёр</h3>
             <nav class="user__nav">
               <ul class="user__nav-menu">
@@ -89,7 +104,7 @@
             </div>
             <div class="user-birthday">
               <img src="img/gift.png" alt="gift">
-              <p class="birthday">05.06.1994</p>
+              <p class="birthday"><?php echo $data['birthday']?></p>
             </div>
             <div class="user-competitions">
               <ul>
@@ -99,8 +114,14 @@
               </ul>
             </div>
             <h3 class="user-status">Личная информация</h3>
-            <p class="user-description">Являюсь волонтером с 2015 года. Веду блог про экологичный образ жизни. Помогаю людям бесплатными консультациями, как сделать жизнь более экологичной через изменение бытовых привычек.
-За время обучения в университете принимала участие в научных конференциях с темами работ по волонтёрству, третьему сектору, проектному методу работы. Являюсь почетным донором Российской Федерации.</p>
+            <p class="user-description"><?php 
+            if ($data['description'] == "") 
+                echo "<a id='addDesc' href='#'>Добавить данные</a>"; 
+            else {
+                echo $data['description'];
+            echo "<p><a id='addDesc' href='#'>Изменить данные</a></p>";
+            }?></p>
+            <textarea id='user_desc' rows='10' cols='45' hidden="hidden"></textarea>
           </div>
         </div>
         <!-- /.col-8 -->
@@ -108,7 +129,49 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.user-profile -->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script>
+
+$( document ).ready(function(){
+
+          $('#addDesc').click(function() {
+              if ($('#addDesc').text() == "Сохранить")
+              {
+                  $.ajax({
+                      url: "saveuserdesc.php",
+                      method:"POST",
+                      data:{
+                        desc: $('#user_desc').val(),
+                      },
+                    }).done(function(data) {
+                        console.log(data);
+                        if (data == "500")
+                            alertify.error('Ошибка. Проверьте правильность заполнения полей');
+                        else{
+                          alertify.alert("","Изменения сохранены", function(){
+                            });
+                          console.log(data);
+                          console.log('success');
+                          $('.user-description').text($('#user_desc').val());
+                          $('#user_desc').hide();
+                          $('#addDesc').text("Изменить");
+                        }
+                    }).fail(function() {
+                      alertify.error('Ошибка. Проверьте правильность заполнения полей');
+                    });
+              }
+              else{
+                $('#addDesc').text("Сохранить");
+                $('#user_desc').show();
+              }
+
+            
+          });
+          
+}
+);
+
+
+</script>

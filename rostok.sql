@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 28 2019 г., 22:45
+-- Время создания: Сен 29 2019 г., 08:28
 -- Версия сервера: 5.7.11
 -- Версия PHP: 7.0.3
 
@@ -115,6 +115,21 @@ INSERT INTO `publications` (`id`, `name`, `photo`, `content`, `likes`, `user_id`
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `quest`
+--
+
+CREATE TABLE `quest` (
+  `id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `level` int(11) NOT NULL DEFAULT '1',
+  `title` varchar(200) NOT NULL,
+  `text` text NOT NULL,
+  `descr` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `user`
 --
 
@@ -131,7 +146,7 @@ CREATE TABLE `user` (
   `level` int(11) NOT NULL DEFAULT '1',
   `city` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `photo` varchar(200) NOT NULL
+  `photo` varchar(200) NOT NULL DEFAULT 'img/user_avatar/empty-avatar.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -139,11 +154,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `patronymic`, `secondname`, `phone`, `birthday`, `is_checked`, `is_volunteer`, `checknum`, `level`, `city`, `description`, `photo`) VALUES
-(1, 'test', '', '0', '123', '0000-00-00', 0, 0, 234, 0, '', '', ''),
-(2, 'qwe', '', '0', '2134', '0000-00-00', 0, 0, 123, 0, '', '', ''),
 (7, 'Владимир', 'Сергеевич', 'Юранов', '45648795', '1988-03-29', 0, 0, 12312, 0, '', '', ''),
 (8, 'Екатерина ', 'Дмитриевна', 'Варламова', '222225555', '1994-05-06', 1, 1, 11, 1, 'Пензенская область', 'Являюсь волонтером с 2015 года. Веду блог про экологичный образ жизни. Помогаю людям бесплатными консультациями, как сделать жизнь более экологичной через изменение бытовых привычек. За время обучения в университете принимала участие в научных конференциях с темами работ по волонтёрству, третьему сектору, проектному методу работы. Являюсь почетным донором Российской Федерации.', 'adolescent-attractive-backpack-1462630@3x.png'),
-(11, 'Fgg', 'Hhh', '', '5677', '1988-12-12', 0, 0, 0, 0, '', '', '');
+(18, 'Илья', 'Дмитриевич', 'Остохин', '123', '1996-02-14', 0, 0, 0, 0, '', '', ''),
+(19, 'saadsdasd', 'asdasd', 'asdasd', 'sdf', '1996-02-14', 0, 0, 0, 0, '', '', ''),
+(20, '123', '123', '123', '1234', '1234-12-12', 0, 0, 0, 0, '', '', ''),
+(21, 'Владимир', 'Сергеевич', 'Юранов', '12345', '1988-02-02', 0, 0, 0, 0, '', '', ''),
+(22, 'Владимир', 'Сергеевич', 'Юранов', '123456', '1988-02-02', 0, 0, 0, 0, '', 'счямчяисяси', 'img/user_avatar/empty-avatar.png');
 
 -- --------------------------------------------------------
 
@@ -205,6 +222,12 @@ ALTER TABLE `publications`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `quest`
+--
+ALTER TABLE `quest`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `user`
 --
 ALTER TABLE `user`
@@ -235,10 +258,15 @@ ALTER TABLE `initiative`
 ALTER TABLE `publications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT для таблицы `quest`
+--
+ALTER TABLE `quest`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
