@@ -20,7 +20,7 @@
         <div class="row align-items-start">
           <div class="col-4">
             <div class="header__logo">
-              <a href="#" class="logo">Геймтивист</a>
+              <a href="index.php" class="logo">Геймтивист</a>
             </div>
             <!-- /.header__logo -->
           </div>

@@ -42,7 +42,7 @@
           <div class="col-8 ">
             <nav class="header__nav">
               <li><a href="#">Партнёры</a></li>
-              <li><a href="#">Квесты</a></li>
+              <li><a href="questlist.php">Квесты</a></li>
               <li><a href="activist.php">Активисты</a></li>
               <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
