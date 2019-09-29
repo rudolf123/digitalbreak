@@ -11,6 +11,7 @@
     <link href="css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-git2.js"></script> 
   </head>
 
   <body>
@@ -29,8 +30,8 @@
               <li><a href="#">Партнёры</a></li>
               <li><a href="#">Квесты</a></li>
               <li><a href="activist.php">Активисты</a></li>
-              <li><a href="#">Лента</a></li>
-              <li ><a href="profile.php">Личный кабинет</a></li>
+              <li><a href="lenta.php">Лента</a></li>
+              <li ><a href="profile.php" >Личный кабинет</a></li>
               <img src="img/user_avatar/stroke-1.png" id="search-form" alt="Поиск">
             </nav>            
             <!-- /.header__nav -->
@@ -42,12 +43,36 @@
     <!-- /.container -->
     </header>
     <!-- /.header -->
-
-    <section>
-    <div class="col-4">
-    <h1>Главная страница сайта ГЕЙМТИВИСТ</h1>
-    </div>
+    <section class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <img class="maskot" src="img/Comp_7.gif" alt="Логотип">
+          </div>
+          <div class="col-6">
+            <p class="dialog">Привет! <br>
+              Я Тиви — твой помощник  в море волонтерства. </p>
+            <p class="dialog-cont">Присоединяйся к моей команде</p>
+            <button id="regist" class="btn-index">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            <button id="login" class="btn-index btn-o">ВОЙТИ</button>
+            <a href="#" class="with_reg">Продолжить без регистрации</a>
+          </div>
+        </div>
+      </div>
     </section>
-
   </body>
 </html>
+
+<script>
+
+$( document ).ready(function(){
+    console.log("asdasd");
+          $('#regist').click(function() {
+              console.log("asdasd");
+            window.location = "regist.php";
+          });
+}
+);
+
+
+</script>

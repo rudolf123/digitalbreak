@@ -1,0 +1,272 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.menu-active {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #fff;
+}
+
+.btn {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 180px;
+  height: 45px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #4463df;
+  border-radius: 4px;
+  color: #4463df;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-blue {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 240px;
+  height: 45px;
+  padding: 15px 30px;
+  background-color: transparent;
+  border: 2px solid #4463df;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #4463df;
+  text-transform: uppercase;
+}
+
+.btn-yellow {
+  margin-top: 20px;
+  background-color: #f8794e;
+  color: #fff;
+  border: 2px solid #f8794e;
+  cursor: pointer;
+}
+
+.btn-yellow:hover {
+  background-color: #4463df;
+  color: #fff;
+  border: 2px solid #4463df;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.achieve-button {
+  margin-top: 45px;
+  width: 100%;
+}
+
+.achieve-button:hover {
+  background-color: #4463df;
+  color: #fff;
+  border: 2px solid #4463df;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0;
+}
+
+.header {
+  padding-top: 20px;
+  background-color: #4463df;
+  padding-bottom: 10px;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header__nav li a {
+  color: #fff;
+  font-size: 16px;
+}
+
+.header__nav li a:hover {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #fff;
+}
+
+.user-profile {
+  padding: 100px 17.6% 140px 17.6%;
+}
+
+.user-photo {
+  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-photo img {
+  margin-left: 20px;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.user-name {
+  font-size: 34px;
+  font-weight: normal;
+  margin: 0;
+  color: #281f3d;
+  margin-bottom: 15px;
+}
+
+.user-status {
+  font-size: 24px;
+  color: #4463df;
+  margin: 0;
+  font-weight: normal;
+}
+
+.user-team {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.user__team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 25px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-preferred-size: 60px;
+  flex-basis: 60px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.user__team img {
+  margin-bottom: 15px;
+}
+
+.user__nav-menu {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user__nav-menu li {
+  margin-right: 90px;
+  font-weight: 24px;
+}
+
+.user__nav-menu li a {
+  color: #443c56;
+}
+
+.user__nav-menu li a:hover {
+  padding-bottom: 3px;
+  border-bottom: 3px solid #4463df;
+}
+
+.user-location {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-location img {
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 5px;
+}
+
+.user-location .current-city {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.user-birthday {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-birthday img {
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.user-birthday .birthday {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.user-competitions {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+.user-competitions ul {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.user-competitions ul li {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  color: #f8794e;
+  border: solid 3px #f8794e;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.user-description {
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+}
+
+.user__nav_menu-active {
+  padding-bottom: 3px;
+  border-color: #4463df;
+}

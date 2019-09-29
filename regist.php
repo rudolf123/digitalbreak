@@ -25,7 +25,7 @@
         <div class="row align-items-start">
           <div class="col-4">
             <div class="header__logo">
-              <a href="#" class="logo">Геймтивист</a>
+              <a href="index.php" class="logo">Геймтивист</a>
             </div>
             <!-- /.header__logo -->
           </div>
@@ -34,8 +34,8 @@
             <nav class="header__nav">
               <li><a href="#">Партнёры</a></li>
               <li><a href="#">Квесты</a></li>
-              <li><a href="#">Активисты</a></li>
-              <li><a href="#">Лента</a></li>
+              <li><a href="activist.php">Активисты</a></li>
+              <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
               <img src="img/user_avatar/stroke-1.png" id="search-form" alt="Поиск">
             </nav>            
@@ -57,7 +57,7 @@
         <input type="text" name="secondname" id="secondname">
         <label for="patronymic">Отчество</label>
         <input type="text" name="patronymic" id="patronymic">
-        <label for="birthday">Дата рождения (ГГ-ММ-ДД)</label>
+        <label for="birthday">Дата рождения (ГГГГ-ММ-ДД)</label>
         <input type="text" name="birthday" id="birthday">
         <label for="phone">Номер телефона</label>
         <input type="text" name="phone" id="phone">
@@ -88,8 +88,8 @@ $( document ).ready(function(){
                 if (data == 500)
                     alertify.error('Ошибка. Проверьте правильность заполнения полей');
                 else{
-                  alertify.alert("Вы успешно зарегистрированы!", function(){
-                    //window.location = "profile.php";
+                  alertify.alert("Поздравляем!","Вы успешно зарегистрированы!", function(){
+                    window.location = "profile.php";
                     });
                   console.log(data);
                   console.log('success');

@@ -19,7 +19,7 @@
         <div class="row align-items-start">
           <div class="col-4">
             <div class="header__logo">
-              <a href="#" class="logo">Геймтивист</a>
+              <a href="index.php" class="logo">Геймтивист</a>
             </div>
             <!-- /.header__logo -->
           </div>
@@ -29,7 +29,7 @@
               <li><a href="#">Партнёры</a></li>
               <li><a href="#">Квесты</a></li>
               <li><a href="activist.php">Активисты</a></li>
-              <li><a href="#">Лента</a></li>
+              <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
               <img src="img/user_avatar/stroke-1.png" id="search-form" alt="Поиск">
             </nav>            
@@ -58,6 +58,17 @@
                 <a href="#"><img src="img/group-11.png" alt="Instagramm"></a>
                 <a href="#"><img src="img/group-2-.png" alt="Добровольцы России"></a>
               </div>
+              <h3 class="user-status user-team">Команда</h3>
+              <div class="user__team">
+                <img src="img/user_team/group-3.png" alt="#">
+                <img src="img/user_team/group-15.png" alt="#">
+                <img src="img/user_team/group-5.png" alt="#">
+                <img src="img/user_team/group-4.png" alt="#">
+                <img src="img/user_team/group-6.png" alt="#">
+                <img src="img/user_team/group-7.png" alt="#">
+              </div>
+              <button class="btn-blue">Предложить проект</button>
+            <!-- /.user__left-information -->
             </div>
             <!-- /.user__left-information -->
           </div>

@@ -19,7 +19,7 @@
         <div class="row align-items-start">
           <div class="col-4">
             <div class="header__logo">
-              <a href="#" class="logo">Геймтивист</a>
+              <a href="index.php" class="logo">Геймтивист</a>
             </div>
             <!-- /.header__logo -->
           </div>
@@ -28,8 +28,8 @@
             <nav class="header__nav">
               <li><a href="#">Партнёры</a></li>
               <li><a href="#">Квесты</a></li>
-              <li><a href="#">Активисты</a></li>
-              <li><a href="#">Лента</a></li>
+              <li><a href="activist.php">Активисты</a></li>
+              <li><a href="lenta.php">Лента</a></li>
               <li ><a href="#" class="menu-active">Личный кабинет</a></li>
               <img src="img/user_avatar/stroke-1.png" id="search-form" alt="Поиск">
             </nav>            
